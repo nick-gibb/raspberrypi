@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Home extends Component {
+export default class Map extends Component {
   render() {
     return (
       <div>
-        Here is the homepage.
+        Map
       </div>
     )
   }

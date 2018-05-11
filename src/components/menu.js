@@ -1,17 +1,50 @@
-import React, { Component } from "react";
+import React, {Component} from 'react'
+import { Menu } from 'semantic-ui-react'
+import { Route, Link } from "react-router-dom";
 
-export default class TopMenu extends React.Component {
+export default class AMenu extends Component {
+  state = {activeItem: 'home'}
+  handleItemClick = (e, { name }) => {
+    this.setState({ activeItem: name });
+  }
+
   render() {
+    const { activeItem } = this.state 
     return (
-      <div class="ui secondary  menu">
-        <a class="item active">Home</a>
-        <a class="item">Database</a>
-        <a class="item ">Map</a>
-        <div class="right menu">
-          <a class="ui item">FR</a>
-          <a class="ui item">Login</a>
-        </div>
+      <div>
+        <Menu defaultActiveIndex={"1"}>
+        <Menu.Item
+          name='home'
+          to='/'
+          index={1}
+          as={ Link }
+          active={this.state.activeItem === 'home'}
+          onClick={this.handleItemClick}
+        >
+          Home
+        </Menu.Item>
+
+        <Menu.Item
+          name='database'
+          active={activeItem === 'database'}
+          onClick={this.handleItemClick}
+          as={ Link }
+          to='database'
+        >
+          Database
+        </Menu.Item>
+        <Menu.Item
+          name='map'
+          active={activeItem === 'map'}
+          onClick={this.handleItemClick}
+          as={ Link }
+          to='map'
+        >
+          Map
+        </Menu.Item>
+        </Menu>
+
       </div>
-    );
+    )
   }
 }

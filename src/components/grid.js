@@ -1,18 +1,20 @@
-import Login from "./login";
-import React from "react";
-import { Grid, Image } from "semantic-ui-react";
+import React from 'react'
+import { Grid } from 'semantic-ui-react'
+import Table from './Table'
+import Modal from './modal'
+import Search from './search'
 
-const GridExampleVerticallyDivided = () => (
-  <Grid divided="vertically">
-    <Grid.Row columns={2}>
-      <Grid.Column>
-        <Login />
-      </Grid.Column>
-      <Grid.Column>
-        <Image src={require("./geology.png")} />
-      </Grid.Column>
-    </Grid.Row>
+
+const MyGrid = () => (
+  <Grid>
+    <Grid.Column width={13}>
+      <Table />
+    </Grid.Column>
+    <Grid.Column width={3}>
+      <Modal text="Add New" />
+      <Search style={{paddingTop:"10px"}}/>
+    </Grid.Column>
   </Grid>
-);
+)
 
-export default GridExampleVerticallyDivided;
+export default MyGrid
