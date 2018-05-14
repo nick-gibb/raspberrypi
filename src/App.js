@@ -8,6 +8,15 @@ import Map from "./components/map";
 import NoMatch from "./components/NoMatch";
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleLangChange = this.handleLangChange.bind(this);
+    this.state = { activeItem:window.location.pathname };
+  }
+
+  handleLangChange(lang,unusedLang) {
+    this.props.handleLangChange(lang, unusedLang);
+  }
   render() {
     return (
       <div>
@@ -15,6 +24,7 @@ export default class App extends Component {
           <Menu
             lang={this.props.lang}
             unusedLang={this.props.unusedLang}
+            handleLangChange={this.handleLangChange}
             activeItem={window.location.pathname}
           />
           <div>

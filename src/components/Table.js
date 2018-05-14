@@ -24,7 +24,7 @@ export default class TheTable extends Component {
   render() {
     const { items, cells } = this.state;
     return (
-      <Table selectable columns={4}>
+      <Table unstackable selectable columns={4}>
         <Table.Header>
           <Table.Row>
             {items.map((item, index) => (

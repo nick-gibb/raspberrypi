@@ -16,19 +16,25 @@ const messages = {
   en: messages_en
 };
 let language = navigator.language.split(/[-_]/)[0]; // language without region code
-let unusedLang;
+let unusedLang = 'fr'
 if (language === "fr") {
   unusedLang = "en";
-} else {
-  unusedLang = "fr";
 }
 
 class Wrapper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLangChange = this.handleLangChange.bind(this);
+    this.state = { language: language, unusedLang: unusedLang };
+  }
+  handleLangChange(lang,unusedLang) {
+    this.setState({language: lang, unusedLang: unusedLang});
+  }
   render() {
     return (
-      <IntlProvider locale={language} messages={messages[language]}>
+      <IntlProvider locale={this.state.language} messages={messages[this.state.language]}>
         <BrowserRouter>
-          <App lang={language} unusedLang={unusedLang} />
+          <App lang={this.state.language} unusedLang={this.state.unusedLang} handleLangChange={this.handleLangChange} />
         </BrowserRouter>
       </IntlProvider>
     );

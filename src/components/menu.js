@@ -3,34 +3,34 @@ import { Menu, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 
+
 export default class AMenu extends Component {
   constructor(props) {
     super(props);
+    this.handleLangChange = this.handleLangChange.bind(this);
     this.state = {
       activeItem: props.activeItem,
-      lang: props.lang,
-      unusedLang: props.unusedLang
+      path: window.location.pathname
     };
   }
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
   };
-  handleLangChange = e => {
-    this.setState({ lang: this.state.unusedLang, unusedLang: this.state.lang });
+  handleLangChange = () => {
+    this.props.handleLangChange(this.props.unusedLang, this.props.lang);
   };
 
   handleClick = e => {
     e.preventDefault();
     console.log("The link was clicked.");
   };
-
   render() {
     const { activeItem } = this.state;
 
     return (
       <div>
-        <Menu defaultActiveIndex={"1"}>
+        <Menu stackable defaultActiveIndex={"1"}>
           <Menu.Item header>
             <p>
               <FormattedMessage id="app.gsc" defaultMessage="GSC" />
@@ -77,11 +77,9 @@ export default class AMenu extends Component {
             </Menu.Item>
 
             <Menu.Item
-              lang={this.state.lang}
-              unusedLang={this.state.unusedLang}
               onClick={this.handleLangChange}
             >
-              {this.state.unusedLang}
+              {this.props.unusedLang}
             </Menu.Item>
           </Menu.Menu>
         </Menu>
