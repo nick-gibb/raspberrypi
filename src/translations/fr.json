@@ -1,0 +1,9 @@
+{
+  "app.about": "À propos de",
+  "app.gsc": "CGC",
+  "database": "Base de données",
+  "map": "Carte",
+  "addNew": "Ajouter un nouveau",
+  "home.intro":
+    "Bienvenue ! Allez à la {what} de la base de données pour commencer l'enregistrement !"
+}

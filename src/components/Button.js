@@ -1,13 +1,22 @@
-import React, { Component } from 'react'
-import { Button } from 'semantic-ui-react'
-
+import React, { Component } from "react";
+import { Button } from "semantic-ui-react";
 
 export default class MyButton extends Component {
-    render() {
-        return (
-            <div>
-                <Button>{this.props.text}</Button>
-            </div>
-        )
+  constructor(props) {
+    super(props);
+    this.state = {
+      language: en
+    };
+  }
+  render() {
+    function handleClick(e) {
+      e.preventDefault();
+      console.log("The link was clicked.");
     }
+    return (
+      <div>
+        <Button onClick={handleClicK}>{this.props.text}</Button>
+      </div>
+    );
+  }
 }

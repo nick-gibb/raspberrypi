@@ -1,0 +1,8 @@
+{
+  "app.about": "About",
+  "app.gsc": "GSC",
+  "database": "Database",
+  "map": "Map",
+  "addNew": "Add New",
+  "home.intro": "Welcome! Go to the database {what} to start logging!"
+}
