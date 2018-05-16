@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "faker": "^4.1.0",
-    "google-map-react": "^1.0.2",
     "history": "^1.17.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -19,5 +18,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "react-openlayers": "^0.2.1"
+  }
 }
