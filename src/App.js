@@ -11,10 +11,10 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.handleLangChange = this.handleLangChange.bind(this);
-    this.state = { activeItem:window.location.pathname };
+    this.state = { activeItem: window.location.pathname };
   }
 
-  handleLangChange(lang,unusedLang) {
+  handleLangChange(lang, unusedLang) {
     this.props.handleLangChange(lang, unusedLang);
   }
   render() {
